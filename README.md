@@ -3,7 +3,8 @@
 
 Dehazing is a process of enhancing the visibility and clarity of an image that has been degraded due to the presence of haze or fog. It is a crucial task in computer vision and image processing, especially for applications like autonomous driving, surveillance, and remote sensing.
 
-![Original Image](https://github.com/Sgvkamalakar/Dehazing-Images/assets/103712713/89cdf6cb-881f-4681-8487-def31c536f44) ![dehazed_6](https://github.com/Sgvkamalakar/Dehazing-Images/assets/103712713/bf36f362-5a01-4ca6-9b70-1c0fc8b5c074)
+![Image](https://github.com/Sgvkamalakar/Dehazing-Images/assets/103712713/87e90554-6a63-4e18-ba7c-2a799e48ffa0)
+
 
 ## Dehazing Process:
 
