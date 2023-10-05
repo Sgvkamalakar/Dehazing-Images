@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dehazed Results</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background: url('{{ url_for('static', filename='bg.jpeg') }}') no-repeat center center fixed;
+            background-size: cover;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+        .container {
+            max-width: 800px;
+            margin-top:10px;
+            padding: 20px;
+            background-color: #fff;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+            border-radius: 5px;
+        }
+
+        h1 {
+            text-align: center;
+            color: #333;
+        }
+
+        .image-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-top: 20px;
+        }
+
+        .image {
+            width: 48%; /* Adjust the width as needed */
+        }
+
+        img {
+            display: block;
+            max-width: 100%;
+            height: auto;
+            margin: 0 auto;
+        }
+
+        button {
+            margin-top: 20px;
+            background-color: #007bff;
+            color: #fff;
+            border: none;
+            padding: 10px 20px;
+            cursor: pointer;
+            border-radius: 5px;
+            margin-left:45%;
+        }
+
+        button:hover {
+            background-color: #0056b3;
+        }
+        /* Style for the footer */
+        .footer {
+            text-align: center;
+        }
+
+        /* Style for the footer text */
+        .footer p {
+            color:white;
+            margin-top:10px;
+        }
+
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Results</h1>
+        
+        <div class="image-container">
+            <div class="image">
+                <h2>Original Image</h2>
+                <img src="{{ original_image }}" alt="Original Image">
+            </div>
+            
+            <div class="image">
+                <h2>Dehazed Image</h2>
+                <img src="{{ dehazed_image }}" alt="Dehazed Image">
+            </div>
+        </div>
+        
+        <form action="/" method="get">
+            <button type="submit">Refresh</button>
+        </form>
+        
+    </div>
+    <footer class="footer">
+        <p>&copy; Designed and Developed by <a href="https://www.linkedin.com/in/sgvkamalakar/" target="_blank">Kamalakar</a></p>
+    </footer>
+
+</body>
+</html>

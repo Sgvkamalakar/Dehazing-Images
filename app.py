@@ -32,8 +32,8 @@ def dehaze_image(image, omega=0.78, t0=0.01):
     dehazed_image = np.clip(dehazed_image, 0, 255).astype(np.uint8)
     return dehazed_image 
 
-@app.route('/success', methods=['POST'])
-def success():
+@app.route('/result', methods=['POST'])
+def result():
     if request.method == 'POST':
         f = request.files['file']
         if f.filename == '':
@@ -45,7 +45,7 @@ def success():
         name='dehazed_'+f.filename
         dehazed_image_path = os.path.join(DEHAZED_FOLDER,name)
         cv2.imwrite(dehazed_image_path, dehazed_image)
-        return render_template("success.html", original_image=original_image_path, dehazed_image=dehazed_image_path)
+        return render_template("result.html", original_image=original_image_path, dehazed_image=dehazed_image_path)
   
 if __name__ == '__main__':  
     app.run(debug = True)  
