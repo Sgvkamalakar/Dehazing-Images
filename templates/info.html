@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Information</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f2f2f2;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+
+        .container {
+            max-width: 600px;
+            padding: 20px;
+            background-color: #fff;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            border-radius: 5px;
+        }
+
+        h1 {
+            color: #333;
+            font-size: 24px;
+            margin-bottom: 20px;
+        }
+
+        p {
+            color: #555;
+            font-size: 16px;
+            margin-bottom: 30px;
+        }
+
+        a {
+            text-decoration: none;
+            color: #007bff;
+            font-weight: bold;
+        }
+
+        a:hover {
+            text-decoration: underline;
+        }
+
+        /* Style for the button */
+        .button {
+            display: inline-block;
+            padding: 10px 20px;
+            background-color: #007bff;
+            color: #fff;
+            text-decoration: none;
+            border-radius: 5px;
+            font-size: 16px;
+            margin-left:190px;
+            transition: background-color 0.3s ease-in-out;
+        }
+
+        /* Hover effect */
+        .button:hover {
+            background-color: #0056b3;
+        }
+
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Dehazing Information</h1>
+        <p>
+            Dehazing is a process of enhancing the visibility and clarity of an image that has been degraded due to the presence of haze or fog. It is a crucial task in computer vision and image processing, especially for applications like autonomous driving, surveillance, and remote sensing.
+        </p>
+        <h2>Dehazing Process:</h2>
+        <ol>
+            <li><strong>Dark Channel Prior:</strong> One of the key insights in dehazing is the dark channel prior. It states that in most outdoor images, there exists a local dark channel that contains very low-intensity values for the majority of image regions. This dark channel represents the scene's haziness and is used as a basis for estimating the haze thickness.</li>
+            <li><strong>Atmospheric Light Estimation:</strong> The atmospheric light represents the light that directly reaches the camera without being scattered by haze. It is usually estimated from the brightest pixels in the dark channel.</li>
+            <li><strong>Transmission Map:</strong> The transmission map describes the fraction of light that has been attenuated or scattered due to the haze. It is calculated using the dark channel and the estimated atmospheric light. The transmission map helps in understanding how much the scene's details have been obscured by haze.</li>
+            <li><strong>Dehazing:</strong> With the atmospheric light and transmission map, the dehazing process involves recovering the original scene radiance by dividing the observed image by the transmission map and adding back the atmospheric light. This step restores image clarity and reduces the effects of haze.</li>
+        </ol>
+        <h2>Working of the Code:</h2>
+        <p>
+            The provided Python code is an implementation of a dehazing algorithm. Here's how it works:
+        </p>
+        <ol>
+            <li><strong>Input Image:</strong> The code takes an input hazy image as an input.</li>
+            <li><strong>Dark Channel Prior:</strong> It calculates the dark channel of the input image. The dark channel represents the haziness in the image.</li>
+            <li><strong>Atmospheric Light Estimation:</strong> The code estimates the atmospheric light by finding the top percentile (e.g., 90th percentile) of pixel values in the input image. This represents the brightest part of the image not affected by haze.</li>
+            <li><strong>Transmission Map Calculation:</strong> Using the dark channel and atmospheric light, the code calculates the transmission map. This map indicates the degree of haze in different parts of the image.</li>
+            <li><strong>Dehazing:</strong> The dehazing process involves dividing each color channel of the input image by the transmission map and then adding back the atmospheric light. This operation enhances the image clarity by removing the haze.</li>
+            <li><strong>Output Image:</strong> The code returns the dehazed image, where the majority of the haze has been removed, leading to improved visibility and detail.</li>
+        </ol>
+        <p>
+            This dehazing code is based on the dark channel prior principle and can significantly improve the quality of hazy images, making them suitable for various computer vision applications.
+        </p>
+        <div class="upload">
+            <p><a href="{{ url_for('upload') }}" class="button">Back to Upload Page</a></p>
+        </div>
+    </div>
+</body>
+</html>

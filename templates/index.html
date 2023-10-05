@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <title>Image Dehazing</title>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+  <style>
+    body {
+        font-family: Arial, sans-serif;
+        background: url('{{ url_for('static', filename='bg.jpeg') }}') no-repeat center center fixed;
+        background-size: cover;
+        margin: 0;
+        padding: 0;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+    }
+
+        .container1 {
+            max-width: 691px;
+            padding: 20px;
+            background-color: #fff;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            border-radius: 5px;
+            text-align: center;
+            margin: 50px; /* Minimum margin space of 50px */
+        }
+
+        .container {
+            max-width: 400px;
+            padding: 20px;
+            background-color: #fff;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            border-radius: 5px;
+            text-align: center;
+            margin-top: 20px; /* Additional margin for spacing */
+        }
+
+        h1 {
+            color: #333;
+            font-size: 24px;
+            margin-bottom: 20px;
+        }
+
+        p {
+            color: #555;
+            font-size: 16px;
+            margin-bottom: 30px;
+        }
+
+        form {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        input[type="file"] {
+            display: none;
+        }
+
+        .custom-file-upload {
+            background-color: #007bff;
+            color: #fff;
+            border: none;
+            padding: 12px 20px;
+            cursor: pointer;
+            border-radius: 5px;
+            font-size: 16px;
+            transition: background-color 0.3s ease-in-out;
+            margin-bottom: 20px;
+        }
+
+        .custom-file-upload:hover {
+            background-color: #0056b3;
+        }
+
+        input[type="submit"] {
+            background-color: #007bff;
+            color: #fff;
+            border: none;
+            padding: 12px 20px;
+            cursor: pointer;
+            border-radius: 5px;
+            font-size: 16px;
+            transition: background-color 0.3s ease-in-out;
+        }
+
+        input[type="submit"]:hover {
+            background-color: #0056b3;
+        }
+
+        /* Style for the file input label */
+        .file-input-label {
+            font-size: 16px;
+            font-weight: bold;
+        }
+        #error-message {
+            background: rgba(255, 0, 0, 0.2);
+            backdrop-filter: blur(10px);
+            border-radius: 5px;
+            padding: 10px;
+            color: #fff;
+            display: none;
+            bottom: 20px;
+            right: 20px;
+            transition: opacity 0.3s ease-in-out;
+            max-width: 400px;
+            padding: 15px;
+            text-align: center;
+            margin-left: 10px;
+            margin-top: 15px;
+        }
+
+        /* Adjust the opacity when displayed */
+        #error-message.active {
+            display: block;
+            opacity: 1;
+        }
+    </style>
+</head>
+<body>
+    <div class="container1">
+        <p>Dehazing is a process of enhancing the visibility and clarity of an image that has been degraded due to the presence of haze or fog. It is a crucial task in computer vision and image processing, especially for applications like autonomous driving, surveillance, and remote sensing.</p>
+    <p>Learn more about dehazing <a href="{{ url_for('info') }}">here</a>.</p>
+    </div>
+    <div class="container">    
+        <h1>Upload an Image</h1>
+        <form action="/success" method="post" enctype="multipart/form-data">
+            <label for="file-upload" class="custom-file-upload">
+                <span class="file-input-label">Select File</span>
+            </label>
+            <input type="file" id="file-upload" name="file" />
+            <input type="submit" value="Dehaze">
+        </form>
+        {% if error %}
+        <div id="error-message" class="active">
+            {{ error }}
+        </div>
+        {% endif %}
+    </div>
+</body>
+</html>
