@@ -16,7 +16,7 @@ def dehaze_image(image, omega=0.78, t0=0.01):
     return dehazed_image 
 
 
-input_image=cv2.imread('static/uploads/1.jpeg')
+input_image=cv2.imread('image_path')
 dehazed_result=dehaze_image(input_image)
 result=np.hstack((input_image,dehazed_result))
 cv2.imshow("Image",result)
