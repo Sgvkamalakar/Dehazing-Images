@@ -34,3 +34,8 @@ The provided Python code is an implementation of a dehazing algorithm. Here's ho
 
 This dehazing code is based on the dark channel prior principle and can significantly improve the quality of hazy images, making them suitable for various computer vision applications.
 
+## Web Application Structure
+
+- `main.py`: Contains the code for the web interface using the Gradio framework.
+- `app.py`, `templates`, and `static` folders: Together, these components make up the Flask-based web application for additional functionality, styling and presentation.
+
