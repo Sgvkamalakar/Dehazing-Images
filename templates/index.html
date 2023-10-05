@@ -102,7 +102,7 @@
             backdrop-filter: blur(10px);
             border-radius: 5px;
             padding: 10px;
-            color: #fff;
+            color: red;
             display: none;
             bottom: 20px;
             right: 20px;
@@ -119,6 +119,18 @@
             display: block;
             opacity: 1;
         }
+
+        /* Style for the footer */
+        .footer {
+            text-align: center;
+        }
+
+        /* Style for the footer text */
+        .footer p {
+            color:white;
+            margin-top:10px;
+        }
+
     </style>
 </head>
 <body>
@@ -140,6 +152,11 @@
             {{ error }}
         </div>
         {% endif %}
+        
     </div>
+    <footer class="footer">
+            <p>&copy; Designed and Developed by <a href="https://www.linkedin.com/in/sgvkamalakar/" target="_blank">Kamalakar</a></p>
+    </footer>
+    
 </body>
 </html>
