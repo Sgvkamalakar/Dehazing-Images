@@ -40,3 +40,23 @@ This dehazing code is based on the dark channel prior principle and can signific
 - `main.py`: Contains the code for the web interface using the Gradio framework.
 - `app.py`, `templates`, and `static` folders: Together, these components make up the Flask-based web application for additional functionality, styling and presentation.
 
+
+# Sample Results
+
+![image](https://github.com/Sgvkamalakar/Dehazing-Images/assets/103712713/e0597485-23ed-4757-be4d-954761d543d5)
+
+![image](https://github.com/Sgvkamalakar/Dehazing-Images/assets/103712713/12c59847-31ef-45cc-8808-9e3ae3090669)
+
+![image](https://github.com/Sgvkamalakar/Dehazing-Images/assets/103712713/4b33f898-26f2-4535-a98c-a4547e846d67)
+
+![image](https://github.com/Sgvkamalakar/Dehazing-Images/assets/103712713/e46f5d51-0f4c-43a9-8ff5-e7bd7dac8fb2)
+
+![image](https://github.com/Sgvkamalakar/Dehazing-Images/assets/103712713/a5999baa-fe10-4926-884a-3f149e60f8c7)
+
+![image](https://github.com/Sgvkamalakar/Dehazing-Images/assets/103712713/98a0ecd4-d03f-4b4d-a3c7-bfb776563db4)
+
+
+
+
+
+
